@@ -8,3 +8,6 @@ use flake "github:fabian-gubler/templates?dir=<name>"
 # Run direnv
 direnv allow
 ```
+
+## Further Resources
+- [dev-templates](https://github.com/the-nix-way/dev-templates)
