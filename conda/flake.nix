@@ -10,6 +10,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
 
+        pkgs = import nixpkgs { inherit system; };
         # Conda installs it's packages and environments under this directory
         installationPath = "~/.conda";
 
@@ -91,7 +92,6 @@
             export FONTCONFIG_FILE=/etc/fonts/fonts.conf
             export QTCOMPOSE=${pkgs.xorg.libX11}/share/X11/locale
           '';
-          runScript = "zsh && source activate venv";
         };
       }
     );
