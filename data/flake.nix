@@ -1,12 +1,11 @@
 {
-  description = "Machine Learning Configuration Flake";
+  description = "Data Science Configuration Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, flake-utils, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
     # Automatically detect correct system (in my case x86_64-linux)
     flake-utils.lib.eachDefaultSystem (system:
       let

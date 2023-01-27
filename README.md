@@ -12,10 +12,6 @@ Once your preferred template has been initialized, you can use the provided shel
 1. If you have nix-direnv installed, you can initialize the environment by running direnv allow.
 2. If you don't have nix-direnv installed, you can run nix develop to open up the Nix-defined shell.
 
-## How to use 
-
-# Run direnv
-direnv allow
-
 ## Further Resources
 - [dev-templates](https://github.com/the-nix-way/dev-templates)
+- [philosophy](https://determinate.systems/posts/nix-direnv)

@@ -10,9 +10,9 @@
           description = "Data Science development environment";
         };
 
-        rust = {
-          path = ./rust;
-          description = "Rust development environment";
+        conda = {
+          path = ./conda;
+          description = "Isolated Conda File System";
         };
 
       };
