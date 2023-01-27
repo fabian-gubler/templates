@@ -2,8 +2,9 @@
 
 ## How to Use
 ```bash
-# Create a new project (specify template and directory name)
-nix flake new --template github:fabian-gubler/templates#<template> <directory-name>
+# Initialize project with corresponding template
+nix flake new --template github:fabian-gubler/templates#<template> 
+```
 
 ## How to use the templates
 Once your preferred template has been initialized, you can use the provided shell in two ways:
@@ -15,7 +16,6 @@ Once your preferred template has been initialized, you can use the provided shel
 
 # Run direnv
 direnv allow
-```
 
 ## Further Resources
 - [dev-templates](https://github.com/the-nix-way/dev-templates)

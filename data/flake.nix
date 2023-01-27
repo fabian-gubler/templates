@@ -12,11 +12,11 @@
       let
         python = "python310"; # <--- change here
         pkgs = import nixpkgs { inherit system; };
-        pythonPackages = pkgs.python3Packages;
+        pythonPackages = pkgs.python310Packages;# <--- change here
       in
       {
         devShell = pkgs.mkShell {
-          name = "impurePythonEnv";
+          name = "nix-shell";
           venvDir = "./.venv";
           buildInputs = [
             # A Python interpreter including the 'venv' module is required to bootstrap
