@@ -15,6 +15,12 @@
           description = "Isolated Conda File System";
         };
 
+        java = {
+          path = ./java;
+          description = "Java development environment for neovim";
+        };
+
+
       };
     };
 }
