@@ -10,6 +10,11 @@
           description = "Java development environment for neovim";
         };
 
+        latex = {
+          path = ./latex;
+          description = "Latex Writing and build environment";
+        };
+
         data = {
           path = ./data;
           description = "Data Science development environment";
