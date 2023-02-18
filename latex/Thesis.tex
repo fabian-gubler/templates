@@ -8,7 +8,6 @@
 
 % Include any extra LaTeX packages required
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
-\usepackage{pdfpages}
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
@@ -98,23 +97,8 @@ Lorem Ipsum
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
 % Include the chapters of the thesis, as separate files
-% Just uncomment the lines as you write the chapters
-
-
-% NOTE: Must follow IMRAD Structure: Introduction, Methods, Results, and Discussion
-% \input{Chapters/Chapter0} % Sample Chapter
-
-\input{Chapters/Chapter1} % Introduction (Santander Task Description)
-
-% \input{Chapters/Chapter2} % Methods
-%
-% \input{Chapters/Chapter3} % Data
-%
-% \input{Chapters/Chapter4} % Results
-%
-% \input{Chapters/Chapter5} % Discussion
-%
-% \input{Chapters/Chapter6} % Discussion
+\input{Chapters/Chapter1} 
+% \input{Chapters/Chapter2} 
 
 \clearpage  % Declaration ended, now start a new page
 
@@ -123,9 +107,10 @@ Lorem Ipsum
 
 % Declaration Page required for the Thesis, your institution may give you a different text to place here
 
-% \includepdf[pages=-, offset=75 -75]{signed.pdf}
 \input{Appendices/Declaration.tex}
 
+% \usepackage{pdfpages}
+% \includepdf[pages=-, offset=75 -75]{signed.pdf}
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
@@ -135,10 +120,7 @@ Lorem Ipsum
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
 \input{Appendices/AppendixA}	% Appendix Title
-
 \input{Appendices/AppendixB} % Appendix Title
-
-% \input{Appendices/AppendixC} % Appendix Title
 
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \backmatter
