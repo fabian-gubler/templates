@@ -62,17 +62,6 @@
           buildInputs = [ latex-packages dev-packages ];
         };
 
-        packages = flake-utils.lib.flattenTree {
-          document = import ./build-document.nix {
-            inherit pkgs;
-            texlive = latex-packages;
-            shellEscape = true;
-            minted = true;
-            SOURCE_DATE_EPOCH = toString self.lastModified;
-          };
-        };
-
-        defaultPackage = packages.document;
       }
     );
 }
