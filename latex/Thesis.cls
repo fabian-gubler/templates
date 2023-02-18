@@ -2,7 +2,25 @@
 %% This is file `Thesis.cls', based on 'ECSthesis.cls', by Steve R. Gunn
 %% generated with the docstrip utility.
 %%
-%% Created by Steve R. Gunn, modified by Sunil Patel: www.sunilpatel.co.uk
+
+%% ----------------------------------------------------------------
+\newcommand*{\authors}[1]{\def\authornames{#1}}
+\newcommand*{\addresses}[1]{\def\addressnames{#1}}
+\newcommand*{\UNIVERSITY}[1]{\def\UNIVNAME{#1}}
+\newcommand*{\course}[1]{\def\facname{#1}}
+\newcommand*{\subject}[1]{\def\subjectname{#1}}
+\newcommand*{\keywords}[1]{\def\keywordnames{#1}}
+
+\authors     {}
+\UNIVERSITY  {\texorpdfstring{\href{https://www.unisg.ch/}
+                {UNIVERSITÄT ST.GALLEN}}
+                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
+\course     {COURSE NAME}
+\subject	 {}
+\keywords	 {}
+\addresses   {}
+
+%% ----------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{Thesis}
@@ -39,14 +57,8 @@
 }
 
 \newcommand\btypeout[1]{\bhrule\typeout{\space #1}\bhrule}
-\def\today{\ifcase\month\or
-  January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or December\fi
-  \space \number\year}
 \usepackage{setspace}
 \onehalfspacing
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
 \setmarginsrb           { 1.5in}  % left margin
                         { 0.6in}  % top margin
@@ -57,6 +69,8 @@
                         {   9pt}  % foot height
                         { 0.3in}  % foot sep
 \raggedbottom
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \setlength{\topskip}{1\topskip \@plus 5\p@}
 \doublehyphendemerits=10000       % No consecutive line hyphens.
 \brokenpenalty=10000              % No broken words across columns/pages.
@@ -118,48 +132,6 @@
 \pdfstringdefDisableCommands{
    \let\\\space
 }
-\newcommand*{\supervisor}[1]{\def\supname{#1}}
-\newcommand*{\examiner}[1]{\def\examname{#1}}
-\newcommand*{\degree}[1]{\def\degreename{#1}}
-\newcommand*{\authors}[1]{\def\authornames{#1}}
-\newcommand*{\addresses}[1]{\def\addressnames{#1}}
-\newcommand*{\university}[1]{\def\univname{#1}}
-\newcommand*{\UNIVERSITY}[1]{\def\UNIVNAME{#1}}
-\newcommand*{\department}[1]{\def\deptname{#1}}
-\newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
-\newcommand*{\group}[1]{\def\groupname{#1}}
-\newcommand*{\GROUP}[1]{\def\GROUPNAME{#1}}
-\newcommand*{\faculty}[1]{\def\facname{#1}}
-\newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
-\newcommand*{\subject}[1]{\def\subjectname{#1}}
-\newcommand*{\keywords}[1]{\def\keywordnames{#1}}
-\supervisor  {}
-\examiner    {}
-\degree      {}
-\authors     {}
-\university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {University Name}}
-                {University Name}}
-\UNIVERSITY  {\texorpdfstring{\href{https://www.unisg.ch/}
-                {UNIVERSITÄT ST.GALLEN}}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-\department  {Contexual Studies: Freier Bereich / Open Area}
-\DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-\group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {Research Group Name}}
-                {Research Group Name}}
-\GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {7,760 Management of Information Security}
-\FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-\addresses   {}
-\subject     {}
-\keywords    {}
 \renewcommand\maketitle{
   \btypeout{Title Page}
   \hypersetup{pdftitle={\@title}}
@@ -170,7 +142,7 @@
   \begin{titlepage}
         \begin{figure}
         \centering
-        \includegraphics[width=7cm]{Figures/hsg-logo.png}
+        \includegraphics[width=7cm]{Figures/hsg-logo-en.png}
         \label{fig:my_label}
     \end{figure}
     \let\footnotesize\small
@@ -189,16 +161,12 @@
       {\LARGE \authornames \par}
       \vfill
       {\large A individual Term paper submitted in partial fulfillment for the \par}
-      {\large Management of Information Security Course\par}
+		{\large Master of Computer Science (MCS)\par}
       \bigskip
       \bigskip
       {\large \par}
-      {\large \facname \par}
-      {\large \deptname \par}
       \bigskip
       \bigskip
-      \bigskip
-      {\Large \@date \par}
       \bigskip
     \end{center}
     \par
@@ -229,8 +197,6 @@
     \bigskip
     {\huge{\textit{Abstract}} \par}
     \bigskip
-    {\normalsize \facname \par}
-    {\normalsize \deptname \par}
     \bigskip
     {\normalsize Master of Computer Science\par}
     \bigskip

@@ -42,6 +42,9 @@
               footmisc
               xltabular
               ltablex
+
+              # custom
+              datetime
               ;
           })
           which
@@ -58,7 +61,7 @@
         devShell = pkgs.mkShell {
           buildInputs = [ latex-packages dev-packages ];
         };
-        
+
         packages = flake-utils.lib.flattenTree {
           document = import ./build-document.nix {
             inherit pkgs;
