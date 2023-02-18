@@ -10,6 +10,7 @@
         pkgs = import nixpkgs { inherit system; };
 
         dev-packages = with pkgs; [
+          texlive.combined.scheme-medium
           texlab
           zathura
           wmctrl
@@ -17,7 +18,6 @@
           python39Packages.pygments
         ];
 
-        texlive = pkgs.texlive.combined.scheme-full;
       in
       rec {
         devShell = pkgs.mkShell {
@@ -26,7 +26,6 @@
         };
 
         packages.document = latex.lib.latexmk {
-          inherit pkgs texlive;
           src = ./.;
           shellEscape = true;
           minted = true;
