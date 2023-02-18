@@ -1,7 +1,6 @@
 {
   inputs = {
     utils.url = "github:numtide/flake-utils";
-    latex.url = "github:leixb/latex-template";
   };
 
   outputs = { self, nixpkgs, utils, latex }:
