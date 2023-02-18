@@ -32,11 +32,13 @@
     in
     {
       devShells.default = pkgs.mkShell {
+        name = "java";
         buildInputs = with pkgs; [
           gradle
+          # jdtls
           jdk
           maven
-		  google-java-format
+          google-java-format
         ];
 
         shellHook = ''
