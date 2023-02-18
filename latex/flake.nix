@@ -1,34 +1,72 @@
 {
-  inputs = {
-    utils.url = "github:numtide/flake-utils";
-  };
+  description = "Build LaTeX document with minted";
 
-  outputs = { self, nixpkgs, utils, latex }:
-    utils.lib.eachDefaultSystem (system:
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  outputs = { self, nixpkgs, flake-utils }:
+    {
+      templates.document = {
+        path = ./.;
+        description = "LaTeX document with minted support";
+      };
+
+      defaultTemplate = self.templates.document;
+    } // flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
 
-        dev-packages = with pkgs; [
-          texlive.combined.scheme-medium
-          texlab
-          zathura
-          wmctrl
+        latex-packages = with pkgs; [
+          (texlive.combine {
+            inherit (texlive)
+              scheme-full
+              framed
+              titlesec
+              cleveref
+              multirow
+              wrapfig
+              tabu
+              threeparttable
+              threeparttablex
+              makecell
+              environ
+              biblatex
+              biber
+              fvextra
+              upquote
+              catchfile
+              xstring
+              csquotes
+              minted
+              dejavu
+              comment
+              footmisc
+              xltabular
+              ltablex
+              ;
+          })
           which
           python39Packages.pygments
         ];
 
+        dev-packages = with pkgs; [
+          texlab
+          zathura
+          wmctrl
+        ];
       in
       rec {
         devShell = pkgs.mkShell {
-          name = "texlive";
-          buildInputs = [ dev-packages ];
+          buildInputs = [ latex-packages dev-packages ];
         };
-
-        packages.document = latex.lib.latexmk {
-          src = ./.;
-          shellEscape = true;
-          minted = true;
-          name = "document.pdf";
+        
+        packages = flake-utils.lib.flattenTree {
+          document = import ./build-document.nix {
+            inherit pkgs;
+            texlive = latex-packages;
+            shellEscape = true;
+            minted = true;
+            SOURCE_DATE_EPOCH = toString self.lastModified;
+          };
         };
 
         defaultPackage = packages.document;
