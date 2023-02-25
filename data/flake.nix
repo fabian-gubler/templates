@@ -34,7 +34,6 @@
             pythonPackages.pycairo
             pythonPackages.torch
             pythonPackages.torchvision
-            pythonPackages.numpy
             pythonPackages.pandas
             pythonPackages.pandas-datareader
             pythonPackages.openpyxl
@@ -42,21 +41,25 @@
             pythonPackages.scipy
             pythonPackages.scikitimage
             pythonPackages.seaborn
-            pythonPackages.torch
-            pythonPackages.torchvision
             pythonPackages.rasterio
 
-            ## Developer tools
-            pkgs.black
-            pythonPackages.flake8
-            pkgs.nodePackages.pyright
 
+            # Natural Language Processing
+            pythonPackages.nltk
+			pythonPackages.spacy
 
             ## Jupyter notebook essentials
             pythonPackages.jupytext
             pythonPackages.ipython
             pythonPackages.jupyter
             pythonPackages.jupyterlab
+
+            ## Developer tools
+            pkgs.black
+            pythonPackages.flake8
+			pythonPackages.isort
+            pkgs.nodePackages.pyright
+
 
             # In this particular example, in order to compile any binary extensions they may
             # require, the Python modules listed in the hypothetical requirements.txt need

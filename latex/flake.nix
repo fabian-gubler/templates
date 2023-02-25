@@ -59,6 +59,7 @@
       in
       rec {
         devShell = pkgs.mkShell {
+			name = "latex";
           buildInputs = [ latex-packages dev-packages ];
         };
 

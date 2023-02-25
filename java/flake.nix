@@ -35,7 +35,7 @@
         name = "java";
         buildInputs = with pkgs; [
           gradle
-          # jdtls
+          # jdt-language-server
           jdk
           maven
           google-java-format
