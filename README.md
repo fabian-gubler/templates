@@ -1,4 +1,4 @@
-# Nix flake templates for easy dev environments
+# Nix flake templates for reproducible dev environments
 
 ## How to Use
 ```bash
